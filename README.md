@@ -14,7 +14,7 @@ It respects [RFC 4180](https://tools.ietf.org/html/rfc4180) for the output CSV f
 The example below shows how you can write records defined as the array of objects into a file.
 
 ```js
-const createCsvWriter = require('csv-writer-browser-browser').createObjectCsvWriter;
+const createCsvWriter = require('csv-writer-browser').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
     path: 'path/to/file.csv',
     header: [
