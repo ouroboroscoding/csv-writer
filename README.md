@@ -9,16 +9,12 @@ This project was original forked from Ryuichi Inagaki's [csv-writer](https://git
 Convert objects/arrays into a CSV string or write them into a file.
 It respects [RFC 4180](https://tools.ietf.org/html/rfc4180) for the output CSV format.
 
-## Prerequisite
-
-* Node version 4 or above
-
 ## Usage
 
 The example below shows how you can write records defined as the array of objects into a file.
 
 ```js
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const createCsvWriter = require('csv-writer-browser').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
     path: 'path/to/file.csv',
     header: [
@@ -61,7 +57,7 @@ node's transform stream and use `CsvStringifier`, which is explained later, insi
 If you don't want to write a header line, don't give `title` to header elements and just give field IDs as a string.
 
 ```js
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const createCsvWriter = require('csv-writer-browser').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
     path: 'path/to/file.csv',
     header: ['name', 'lang']
@@ -71,7 +67,7 @@ const csvWriter = createCsvWriter({
 If each record is defined as an array, use `createArrayCsvWriter` to get an `csvWriter`.
 
 ```js
-const createCsvWriter = require('csv-writer').createArrayCsvWriter;
+const createCsvWriter = require('csv-writer-browser').createArrayCsvWriter;
 const csvWriter = createCsvWriter({
     header: ['NAME', 'LANGUAGE'],
     path: 'path/to/file.csv'
@@ -99,7 +95,7 @@ you can use `createObjectCsvStringifier` (or `createArrayCsvStringifier`)
 to get an `csvStringifier`.
 
 ```js
-const createCsvStringifier = require('csv-writer').createObjectCsvStringifier;
+const createCsvStringifier = require('csv-writer-browser').createObjectCsvStringifier;
 const csvStringifier = createCsvStringifier({
     header: [
         {id: 'name', title: 'NAME'},
@@ -321,10 +317,3 @@ A couple of requests from me when you raise an issue on GitHub.
   I can't start thinking of introducing it until I understand how it helps you 🙂
 * **Reporting a bug:** If you could provide a runnable code snippet that reproduces the bug, it would be very helpful!
 
-
-## Development
-
-### Prerequisite
-
-* Node version 8 or above
-* Docker
